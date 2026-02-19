@@ -46,7 +46,7 @@ export default function Dashboard() {
     }));
 
     try {
-      const response = await fetch('/api/analyze', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ repoUrl, token }),
